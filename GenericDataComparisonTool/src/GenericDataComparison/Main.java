@@ -117,9 +117,14 @@ public class Main
 			switch(caller.function)
 			{
 			case Back:
+		  		int dialogResult = JOptionPane.showConfirmDialog (null, "Are you sure you want to go back? This item has not been saved yet","Warning!",2);
+		  		if(dialogResult == JOptionPane.OK_OPTION) {
+		  			
 				boWin.clearForm();
 				cardLayout.show(cardPanel, "startWin");
 				setFrameSize(UIType.StartWindow);
+				
+		  		}
 				break;
 				
 			case Save:
