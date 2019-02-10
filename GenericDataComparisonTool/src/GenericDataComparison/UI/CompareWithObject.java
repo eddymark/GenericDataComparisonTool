@@ -293,7 +293,7 @@ public class CompareWithObject extends JPanel
 			gbc_lblNewLabel.anchor = GridBagConstraints.EAST;
 			gbc_lblNewLabel.gridx = LABELPOSITION;
 			gbc_lblNewLabel.gridy = gridy;
-			panel.add(d, gbc_lblNewLabel);
+			panel.add(d, gbc_lblNewLabel); //adds the label to the panel
 			
 			JTextField ed = new JTextField();
 			this.bindEntry(ed,c.getName());

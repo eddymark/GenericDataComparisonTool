@@ -24,7 +24,8 @@ import javax.swing.border.MatteBorder;
 import javax.swing.JSpinner;
 import javax.swing.SpinnerNumberModel;
 
-public class CharacteristicPanel extends JPanel 
+
+public class CharacteristicPanel extends JPanel implements BaseComponent
 {
 	private static final long serialVersionUID = 1L;
     private final ButtonGroup buttonGroup = new ButtonGroup();
@@ -124,6 +125,7 @@ public class CharacteristicPanel extends JPanel
 	public boolean PanelIsValid() 
 	{
 		_panelIsValid = fieldCheck();
+		
 		return _panelIsValid;
 	}
 
@@ -145,10 +147,12 @@ public class CharacteristicPanel extends JPanel
 			}
 		} catch (Exception e) {
 			// TODO exception handling
+			
 		}
 
 		BetterValue betterValue = this.rdHighest.isSelected() ? BetterValue.HIGHEST : BetterValue.LOWEST;
 		_char.setBetterValue(betterValue);
+		
 	}
 	
 	public Characteristic getCharacteristic() 
@@ -276,6 +280,7 @@ public class CharacteristicPanel extends JPanel
         gbc_txCharacteristicName.gridx = 1;
         gbc_txCharacteristicName.gridy = 1;
         this.add(txCharacteristicName, gbc_txCharacteristicName);
+        
 
         txMinimum = new JSpinner();
         txMinimum.setModel(new SpinnerNumberModel(new Double(0), null, null, new Double(1)));
@@ -358,5 +363,11 @@ public class CharacteristicPanel extends JPanel
         this.rdLowest.setSelected(false);
         hasChangedData = false;
     }
+
+	@Override
+	public void isDirty() {
+		// want to add some logic that verifies if data has become dirty
+		
+	}
 	
 }

@@ -29,7 +29,7 @@ public class Main
 	private CompareWithObject cwoWin;
 	private EditOrCompareExistingObject eocWin;
 	private StartPanel startWin;
-
+	
 	public static void main(String[] args) 
 	{
 		EventQueue.invokeLater(new Runnable() 
@@ -117,15 +117,19 @@ public class Main
 			switch(caller.function)
 			{
 			case Back:
-				boWin.clearForm();
-				cardLayout.show(cardPanel, "startWin");
-				setFrameSize(UIType.StartWindow);
+					boWin.clearForm();
+					cardLayout.show(cardPanel, "startWin");
+					setFrameSize(UIType.StartWindow);
+ 		 
+				
 				break;
 				
 			case Save:
+				
 				oType = boWin.getObject();
 				manager.deleteObjectTypeByName(oType.getName());
 				manager.addObjectType(oType);
+				
 				manager.saveData();
 				JOptionPane.showMessageDialog(null, "Your new baseline model has been saved.", "Success!",
 						JOptionPane.INFORMATION_MESSAGE);
@@ -148,8 +152,10 @@ public class Main
 			switch(caller.function)		 
 		    {
 		    case Back:
+		    	
 		        cardLayout.show(cardPanel, "startWin");
 		        setFrameSize(UIType.StartWindow);
+		    
 		        break;
  		 
 		      case Delete:

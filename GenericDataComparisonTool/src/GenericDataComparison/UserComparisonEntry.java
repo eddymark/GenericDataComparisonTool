@@ -6,7 +6,9 @@ import java.util.UUID;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
-public class UserComparisonEntry {
+import GenericDataComparison.UI.BaseComponent;
+
+public class UserComparisonEntry implements BaseComponent {
 	private String name;
 	private String objectTypeName;
 	private ArrayList<ComparisonCharacteristic> comparisonCharacteristics;
@@ -138,5 +140,11 @@ public class UserComparisonEntry {
 		}
 		
 		return jsonComparisonCharacteristic;		
+	}
+
+	@Override
+	public void isDirty() {
+		// create logic that makes this works 
+		
 	}
 }

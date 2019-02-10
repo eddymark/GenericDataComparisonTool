@@ -49,6 +49,7 @@ public class GenericComparisonManager {
 	{
 		objectTypes.add(objType);
 		sortObjectTypes();
+	
 	}
 	
 	private void sortObjectTypes()
